@@ -82,7 +82,7 @@ public:
         }
         return 0;
     }
-    /*
+    
     void add(string item) {
         cout << "begin" << endl;
         nthash::NtHash nth(item, hash_num, kmer_size);
@@ -106,7 +106,6 @@ public:
         }
         return true;
     }
-    */
 };
 
  void put_kmer_bf(string& seq, BloomFilter &BF, int k=KMER) {
