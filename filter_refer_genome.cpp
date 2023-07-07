@@ -32,12 +32,12 @@ public:
     size_t get_size(void) {
         return this->v_bool.size();
     }
-    void add(string item) {
+    void add(string& item) {
         const char* kmer = item.c_str();
         uint32_t hash32 = CityHash32(kmer, kmer_size);
         this->v_bool[hash32] = true;
     }
-    bool query(string item) {
+    bool query(string& item) {
         const char* kmer = item.c_str();
         uint32_t hash32 = CityHash32(kmer, 21);
         if(!v_bool[hash32]) {
@@ -45,7 +45,7 @@ public:
         }
         return true;
     }
-    int save_refer_db(string filename) {
+    int save_refer_db(string& filename) {
         ofstream out_file;
         out_file.open(filename, ios::out|ios::binary);
         if(!out_file) {
@@ -67,7 +67,7 @@ public:
         out_file.close();
         return 0;
     }
-    int load_refer_db(string filename) {
+    int load_refer_db(string& filename) {
         ifstream fin;
         fin.open(filename, ios::binary | ios::in);
         char ch;
@@ -82,8 +82,8 @@ public:
         }
         return 0;
     }
-    
-    void add(string item) {
+    /*
+    void add(string& item) {
         cout << "begin" << endl;
         nthash::NtHash nth(item, hash_num, kmer_size);
         while (nth.roll()) {
@@ -94,7 +94,7 @@ public:
         }
         cout << "end" << endl;
     }
-    bool query(string item) {
+    bool query(string& item) {
         nthash::NtHash nth(item, hash_num, kmer_size);
         while (nth.roll()) {
            for (unsigned i = 0; i < nth.get_hash_num(); i++) {
@@ -106,6 +106,7 @@ public:
         }
         return true;
     }
+*/
 };
 
  void put_kmer_bf(string& seq, BloomFilter &BF, int k=KMER) {
