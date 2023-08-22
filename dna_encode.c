@@ -26,9 +26,3 @@ uint32_t seq_to_bin(char* seq) {
  
     return binary_kmer;
 }
-
-int main(int argc,char** argv) {
-    char* seq = argv[1];
-    uint32_t binary = seq_to_bin(seq);
-    printf("%u\n", binary);
-}
