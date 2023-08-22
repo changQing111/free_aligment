@@ -4,31 +4,6 @@
 #define SIZE (1<<20)
 using namespace std;
 
-int8_t base_to_bin(char base) {
-    switch (base) {
-        case 'A': 
-            return 0;
-        case 'T': 
-            return 1;
-        case 'C': 
-            return 2;
-        case 'G': 
-            return 3;
-    }
-}
-
-uint32_t seq_to_bin(char* seq, int n) {
-    uint32_t binary_kmer = 0;
-    //int n = strlen(seq);
-    for(int i = 0; i < n; i++) {
-        int8_t val = base_to_bin(*(seq + i));
-        binary_kmer <<= 2;
-        binary_kmer |= val;
-    }
- 
-    return binary_kmer;
-}
-
 void get_minimizer(char* seq, int n , int k, int w, unordered_map<uint32_t, uint32_t>& count_map) {
     uint32_t kmer_array[SIZE];
     memset(kmer_array, 0, sizeof(kmer_array));
