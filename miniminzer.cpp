@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdint.h>
+#include "dna_encode.h"
 #include <iostream>
 #include <unordered_map>
 #define SIZE (1<<20)
