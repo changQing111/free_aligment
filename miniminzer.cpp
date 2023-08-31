@@ -33,6 +33,11 @@ void get_minimizer(char* seq, int n , int k, int w, unordered_map<uint32_t, uint
 }
 
 int main(int argc,char* argv[]) {
+    int base_map[128];
+    base_map['A'] = 0;
+    base_map['C'] = 1;
+    base_map['G'] = 2;
+    base_map['T'] = 3;
     char* seq = argv[1];
     int n = strlen(seq);
     int k = 5;
