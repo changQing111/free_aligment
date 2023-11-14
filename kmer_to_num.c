@@ -8,7 +8,6 @@ int* kmer_to_num(char* seq, int length, int* num_array, int* BaseMap) {
     for(int i = 0; i < 2*KMER-2; i++)  {
         set_zore |= 1<<i;
     }
-    //printf("%d\n", set_zore);
     int num = 0;
     for(int i = 0; i < KMER; i++) {
         int left_move = 2*(KMER-1-i);
@@ -24,9 +23,9 @@ int* kmer_to_num(char* seq, int length, int* num_array, int* BaseMap) {
 }
 
 int main() {
+    base_map_init(base_map);
     char* seq = "CTAGCTGCTAATGTCTAGCTCGTA";
     int len = strlen(seq);
-    //printf("seq length = %d\n", len);
     int kmer_num = len - KMER + 1;
     int num_arr[kmer_num];
     int* res = kmer_to_num(seq, len, num_arr, base_map);
