@@ -10,8 +10,9 @@ int* kmer_to_num(char* seq, int length, int* num_array, int* BaseMap) {
     }
     int num = 0;
     for(int i = 0; i < KMER; i++) {
-        int left_move = 2*(KMER-1-i);
-        num |= (BaseMap[seq[i]] << left_move);
+        //int left_move = 2*(KMER-1-i);
+        //num |= (BaseMap[seq[i]] << left_move);
+        num = (num << 2)|BaseMap[seq[i]];
     }
     num_array[0] = num;
     for(int j = KMER; j < length; j++) {
