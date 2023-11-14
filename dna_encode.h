@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <string.h>
-#include <stdint.h>
 
 int base_map[128] = {[0 ... 127] = -1};
 base_map['A'] = 0;
