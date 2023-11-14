@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include "dna_encode.h"
 #define KMER 4
 
 int* kmer_to_num(char* seq, int length, int* num_array, int* BaseMap) {
@@ -23,12 +24,6 @@ int* kmer_to_num(char* seq, int length, int* num_array, int* BaseMap) {
 }
 
 int main() {
-    int base_map[128] = {[0 ... 127] = -1};
-    base_map['A'] = 0;
-    base_map['C'] = 1;
-    base_map['G'] = 2;
-    base_map['T'] = 3;
-
     char* seq = "CTAGCTGCTAATGTCTAGCTCGTA";
     int len = strlen(seq);
     //printf("seq length = %d\n", len);
