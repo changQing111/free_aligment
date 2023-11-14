@@ -1,8 +1,15 @@
-#include <stdio.h>
-#include <string.h>
+#ifndef ENCODE_H
+#define ENCODE_H
+#define DEFAULT -1
 
-int base_map[128] = {[0 ... 127] = -1};
-base_map['A'] = 0;
-base_map['C'] = 1;
-base_map['G'] = 2;
-base_map['T'] = 3;
+i
+
+static int *base_map_init(int * map) {
+    memset(map, DEFAULT, 128*sizeof(int));
+    map['A'] = 0;
+    map['C'] = 1;
+    map['G'] = 2;
+    map['T'] = 3;
+}
+
+#endif
