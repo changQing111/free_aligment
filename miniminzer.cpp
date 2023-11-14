@@ -10,7 +10,7 @@ void get_minimizer(char* seq, int n , int k, int w, unordered_map<uint32_t, uint
     char kmer[k];
     for(int i = 0; i < n-k+1; i++) {
         strncpy(kmer, seq + i, k);
-        uint32_t bin = seq_to_bin(kmer, k);
+        uint32_t bin = seq_to_num(kmer, base_map);
         uint32_t hash_val = bin & (SIZE - 1); // take the last 20 bits as hash value
         kmer_array[i] = hash_val;
     }
