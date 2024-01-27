@@ -2,8 +2,6 @@
 #define ENCODE_H
 #define DEFAULT -1
 
-i
-
 static int *base_map_init(int * map) {
     memset(map, DEFAULT, 128*sizeof(int));
     map['A'] = 0;
